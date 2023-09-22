@@ -7,6 +7,9 @@ import importlib
 from tqdm import tqdm
 
 from pathlib import Path
+import sys
+sys.path.append("D:/codeRepository/BatteryML/src")
+sys.path.append("D:/codeRepository/BatteryML/scripts")
 
 def tqdm_wrapper(iterable, desc=None, *args, **kwargs):
     return tqdm(iterable, desc=desc, leave=False, position=1, bar_format="{desc}: {percentage:3.0f}%|{bar}| {n_fmt}/{total_fmt}", *args, **kwargs)
@@ -42,6 +45,7 @@ def convert_data_format(dataset_name=None):
     script_path = Path(__file__).parent / 'preprocess_scripts'
     raw_data_path = Path(__file__).parent.parent / 'data/raw'
     processed_data_path = Path(__file__).parent.parent / 'data/processed'
+    print(raw_data_path)
 
     if isinstance(dataset_name, str) and dataset_name:
         pbar = tqdm([

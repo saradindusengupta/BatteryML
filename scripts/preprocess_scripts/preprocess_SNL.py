@@ -7,6 +7,9 @@ import pandas as pd
 from tqdm import tqdm
 from pathlib import Path
 
+import sys
+sys.path.append("D:/codeRepository/BatteryML/")
+
 from src import BatteryData, CycleData, CyclingProtocol
 from scripts.preprocess import tqdm_wrapper
 
